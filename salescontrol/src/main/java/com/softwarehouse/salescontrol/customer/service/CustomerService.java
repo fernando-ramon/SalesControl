@@ -25,7 +25,7 @@ public class CustomerService implements ServiceProcessor<Customer> {
     }
 
     @Override
-    public Customer get(Long id) {
+    public Customer getById(Long id) {
         return repository.findById(id).orElseThrow(CustomerNotFoundException::new);
     }
 
@@ -46,7 +46,7 @@ public class CustomerService implements ServiceProcessor<Customer> {
     }
 
     @Override
-    public void delete(Long id) {
+    public void deleteById(Long id) {
         Customer customer = repository.findById(id).orElseThrow(CustomerNotFoundException::new);
         repository.delete(customer);
     }

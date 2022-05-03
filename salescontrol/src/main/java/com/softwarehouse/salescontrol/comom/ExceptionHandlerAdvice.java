@@ -29,7 +29,7 @@ public class ExceptionHandlerAdvice {
 
     @ResponseBody
     @ExceptionHandler
-    public ResponseEntity<ExceptionMessageHandler> businesRuleException(CustomerInvalidException customerInvalidException) {
+    public ResponseEntity<ExceptionMessageHandler> customerInvalidException(CustomerInvalidException customerInvalidException) {
         ExceptionMessageHandler exceptionMessageHandler = ExceptionMessageHandler
                 .builder()
                 .message(customerInvalidException.getMessage())
